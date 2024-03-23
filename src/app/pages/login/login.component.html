@@ -1,0 +1,58 @@
+<main class="w-screen h-screen bg px-10">
+  <div
+    class="text-6xl font-semibold w-full text-center pt-10 pb-16 text-gray-100"
+  >
+    <h1>WELCOME TO</h1>
+    <h1>TORTIMAZER 3.0</h1>
+  </div>
+  <div class="grid grid-cols-2">
+    <div class="grid place-items-center">
+      <img
+        src="../../../assets/tortimazer-logo.png"
+        alt="tortimazer-logo"
+        class="aspect-square object-cover"
+      />
+    </div>
+    <div class="bg-green-200 p-5 grid place-items-center rounded-lg shadow-lg">
+      <form [formGroup]="loginForm" class="flex flex-col gap-5 w-full">
+        <h2 class="text-2xl font-semibold text-center">LOGIN</h2>
+        <input
+          formControlName="username"
+          type="text"
+          placeholder="USERNAME"
+          class="w-full shadow-lg rounded-lg bg-green-100 p-2 py-4 placeholder:text-gray-400 hover:border-2 hover:border-green-300 transition-all duration-300 ease-in-out focus:outline-none"
+          [class]="
+            loginForm.value.username === '' && loginForm.touched
+              ? 'border  border-red-500'
+              : ' border-green-300'
+          "
+        />
+        <input
+          formControlName="password"
+          type="password"
+          placeholder="PASSWORD"
+          class="w-full shadow-lg rounded-lg bg-green-100 p-2 py-4 placeholder:text-gray-400 hover:border-2 hover:border-green-300 transition-all duration-300 ease-in-out focus:outline-none"
+          [class]="
+            loginForm.value.password === '' && loginForm.touched
+              ? 'border
+        border-red-500'
+              : ' border-green-300'
+          "
+        />
+        <button
+          class="bg-gray-100 rounded-lg w-full py-4 font-semibold flex items-center gap-2 justify-center shadow-md hover:shadow-lg transition-all duration-300 ease-in-out hover:bg-gray-200 text-lg"
+          (click)="handleLogin()"
+        >
+          Login
+          <div class="w-5">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+              <path
+                d="M217.9 105.9L340.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L217.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1L32 320c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM352 416l64 0c17.7 0 32-14.3 32-32l0-256c0-17.7-14.3-32-32-32l-64 0c-17.7 0-32-14.3-32-32s14.3-32 32-32l64 0c53 0 96 43 96 96l0 256c0 53-43 96-96 96l-64 0c-17.7 0-32-14.3-32-32s14.3-32 32-32z"
+              />
+            </svg>
+          </div>
+        </button>
+      </form>
+    </div>
+  </div>
+</main>

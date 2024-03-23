@@ -1,1 +1,33 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities; /* You can add global styles to this file, and also import other style files */
+
+@keyframes moveBackground {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+.bg {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1038%26quot%3b)' fill='none'%3e%3crect width='1440' height='560' x='0' y='0' fill='rgba(125%2c 206%2c 107%2c 1)'%3e%3c/rect%3e%3cpath d='M0%2c347.98C63.822%2c332.579%2c129.544%2c322.554%2c181.489%2c282.402C230.95%2c244.171%2c246.329%2c179.872%2c282.992%2c129.238C331.214%2c62.641%2c421.599%2c19.76%2c430.824%2c-61.943C440.199%2c-144.972%2c398.602%2c-238.325%2c329.858%2c-285.823C261.999%2c-332.709%2c166.466%2c-274.221%2c87.783%2c-298.962C6.538%2c-324.509%2c-41.702%2c-441.202%2c-126.015%2c-429.169C-207.464%2c-417.544%2c-229.034%2c-307.312%2c-283.814%2c-245.927C-339.661%2c-183.347%2c-445.306%2c-148.536%2c-451.126%2c-64.862C-457.026%2c19.961%2c-345.699%2c64.401%2c-310.793%2c141.934C-275.589%2c220.129%2c-319.584%2c338.684%2c-248.111%2c386.069C-176.931%2c433.259%2c-83.019%2c368.013%2c0%2c347.98' fill='%2355bc3e'%3e%3c/path%3e%3cpath d='M1440 1091.297C1537.993 1074.549 1624.973 1031.566 1710.6309999999999 981.11 1799.609 928.6990000000001 1892.795 879.256 1948.069 792.027 2007.7649999999999 697.8199999999999 2042.996 585.895 2031.354 474.976 2019.501 362.041 1970.255 248.93900000000002 1883.391 175.79899999999998 1800.824 106.27699999999999 1683.201 113.16399999999999 1577.238 92.60899999999998 1481.93 74.12099999999998 1390.234 52.09300000000002 1293.595 61.389999999999986 1179.283 72.38799999999998 1030.425 54.66699999999997 968.221 151.20100000000002 903.721 251.298 1021.471 379.759 1011.96 498.457 1003.385 605.473 899.911 693.064 916.303 799.164 934.028 913.8879999999999 1001.2049999999999 1028.4769999999999 1102.584 1085.029 1202.855 1140.963 1326.824 1110.6390000000001 1440 1091.297' fill='%23a6de9a'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1038'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100vh;
+  width: 100%;
+  animation: moveBackground 20s infinite linear;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
