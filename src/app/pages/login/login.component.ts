@@ -12,7 +12,7 @@ import Swal from 'sweetalert2'
 })
 export class LoginComponent {
   users = [
-    { username: 'admin', password: 'admin123' },
+    { username: 'tortilleriaGutierrez', password: 'tortillitas' },
   ];
 
   loginForm = new FormGroup({
