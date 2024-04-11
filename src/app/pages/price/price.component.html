@@ -1,35 +1,22 @@
-<main class="w-screen h-screen bg px-10">
-  <header
-    class="text-2xl md:text-4xl flex gap-2 items-center font-semibold w-full justify-center pt-10 pb-16 text-gray-100"
+<section class="flex flex-col gap-8 md:mx-10">
+  <h2 class="text-3xl font-semibold text-gray-100 text-center">
+    Price of tortillas
+  </h2>
+  <div
+    class="flex items-center w-1/4 bg-gray-200 p-2 rounded-lg mx-auto text-3xl gap-2"
   >
-    <img
-      src="../../../assets/tortimazer-logo.png"
-      alt="tortimazer-logo"
-      class="aspect-square object-cover h-24 md:h-40"
+    <i class="fa-solid fa-dollar-sign"></i>
+    <input
+      type="number"
+      class="bg-gray-200 text-left focus:ring-0 focus:border-0 focus:outline-none w-full"
+      [formControl]="priceInput"
     />
-    <h1>TORTIMAZER 3.0</h1>
-    <button class="hover:text-gray-200" title="Logout" (click)="handleLogout()">
-      <i class="fa-solid fa-right-from-bracket absolute right-5 top-5"></i>
-    </button>
-  </header>
-  <section class="flex flex-col gap-8 md:mx-10">
-    <h2 class="text-3xl font-semibold text-gray-100">Price of tortillas</h2>
-    <div
-      class="flex items-center w-1/4 bg-gray-200 p-2 rounded-lg mx-auto text-3xl gap-2"
-    >
-      <i class="fa-solid fa-dollar-sign"></i>
-      <input
-        type="number"
-        class="bg-gray-200 text-left focus:ring-0 focus:border-0 focus:outline-none w-full"
-        [formControl]="priceInput"
-      />
-    </div>
-    <button
-      class="w-full bg-white text-black rounded-lg flex items-center gap-3 justify-center py-3 shadow-lg hover:bg-gray-100 text-xl"
-      (click)="handleUpdatePrice()"
-    >
-      Confirm price
-      <i class="fa-solid fa-circle-check"></i>
-    </button>
-  </section>
-</main>
+  </div>
+  <button
+    class="w-full bg-white text-black rounded-lg flex items-center gap-3 justify-center py-3 shadow-lg hover:bg-gray-100 text-xl"
+    (click)="handleUpdatePrice()"
+  >
+    Confirm price
+    <i class="fa-solid fa-circle-check"></i>
+  </button>
+</section>

@@ -5,16 +5,18 @@ import { DbService } from '../../services/db.service';
 import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 import { lastValueFrom } from 'rxjs';
 import * as XLSX from 'xlsx';
+import { PriceComponent } from '../price/price.component';
 
 @Component({
   selector: 'app-reports',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, PriceComponent],
   templateUrl: './reports.component.html',
   styleUrl: './reports.component.css',
 })
 export class ReportsComponent implements OnInit {
   excelData: any[] = [];
+  reportsView = true;
   initDate = new FormControl('', Validators.required);
   endDate = new FormControl('', Validators.required);
 
@@ -26,6 +28,10 @@ export class ReportsComponent implements OnInit {
 
   handleLogout() {
     this.routes.navigate(['/login']);
+  }
+
+  toggleView(showReports: boolean) {
+    this.reportsView = showReports;
   }
 
   async handleGetRecords() {
