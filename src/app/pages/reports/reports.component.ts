@@ -27,7 +27,17 @@ export class ReportsComponent implements OnInit {
   }
 
   handleLogout() {
-    this.routes.navigate(['/login']);
+    Swal.fire({
+      title: 'Are you sure you want to logout?',
+      showDenyButton: true,
+      confirmButtonText: `Yes`,
+      denyButtonText: `No`,
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.localStorage.removeItem('token');
+        this.routes.navigate(['/login']);
+      }
+    });
   }
 
   toggleView(showReports: boolean) {
